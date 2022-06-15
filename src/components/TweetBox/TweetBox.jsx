@@ -60,6 +60,7 @@ export function TweetSubmitButton(props) {
   return (
     <div className="tweet-submit">
       <i className="fas fa-plus-circle"></i>
+      {/* disables button if tweetText.length <= 0 or > 140 */}
       <button className="tweet-submit-button" onClick={props.handleOnSubmit} disabled={props.tweetText?.length <= 0 || props.tweetText?.length > 140}>Tweet</button>
     </div>
   )

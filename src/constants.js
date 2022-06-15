@@ -1,14 +1,15 @@
 export const codepathUserProfile = {
-  name: "Code Path",
-  handle: "codepath",
+  name: "Saul Goodman",
+  handle: "gene_takavic",
+  description: "It's all good man!",
   numTweets: 1299,
   numFollowers: 2500000,
 }
 
 export const firstTweet = {
   id: 0,
-  name: `Code Path`,
-  handle: `codepath`,
+  name: `Saul Goodman`,
+  handle: `gene_takavic`,
   text: `This is a tweet about something that excites us greatly. We're going to proclaim our joy on social media and be showered with praises.`,
   comments: 445,
   retweets: 121,

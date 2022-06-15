@@ -23,6 +23,9 @@
 }
 .card-content .fa-stack {
   background: var(--twitter-blue);
+  background-image: url("jimmy.webp");
+  background-size: 100% 100%;
+  background-size: 100px;
   color: white;
   padding: 20px;
   border-radius: 50%;
@@ -52,9 +55,16 @@
   color: var(--twitter-dark-gray);
   font-weight: 400;
 }
+
+.card-content .twitter-handle .description {
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .card-footer {
   height: 60px;
-  margin: -20px 0px 0px 20px;
+  margin: -10px 0px 0px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;

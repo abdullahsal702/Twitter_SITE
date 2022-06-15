@@ -4,6 +4,10 @@ import { formatLikes } from "../../utils/format"
 import "./Tweet.css"
 
 export default function Tweet({ tweet }) {
+
+  const [amountLikes, setAmountLikes] = React.useState(tweet.likes) 
+  const [liked, setLiked] = React.useState(false)
+
   return (
     <div className="tweet" data-tweet-id={tweet.id}>
       <div className="tweet-avatar">
@@ -13,7 +17,7 @@ export default function Tweet({ tweet }) {
       <div className="tweet-content">
         <TweetUserInfo name={tweet.name} handle={tweet.handle}/>
         <p className="tweet-text">{tweet.text}</p>
-        <TweetFooter numComments={tweet.comments} numRetweets={tweet.retweets} numLikes={tweet.likes}/>
+        <TweetFooter numComments={tweet.comments} numRetweets={tweet.retweets} numLikes={amountLikes} setAmountLikes={setAmountLikes}/>
       </div>
     </div>
   )
@@ -33,7 +37,15 @@ export function TweetUserInfo({ name, handle }) {
   )
 }
 
-export function TweetFooter({ numComments, numRetweets, numLikes }) {
+export function TweetFooter({ numComments, numRetweets, numLikes, setAmountLikes }) {
+
+  const handleOnLike = (event) => {
+    setAmountLikes(numLikes + 1)
+    event.target.classList.add("red")
+    console.log(event.target.parentElement.classList)
+    console.log(event.target.classList) 
+  }
+
   return (
     <div className="tweet-footer">
       <span>
@@ -45,7 +57,7 @@ export function TweetFooter({ numComments, numRetweets, numLikes }) {
         {numRetweets || 0}
       </span>
       <span>
-        <i className="fas fa-heart"></i>
+        <i className="fas fa-heart" onClick={handleOnLike}></i>
         {formatLikes(numLikes ?? 0)}
       </span>
       <span>
