@@ -90,3 +90,8 @@
   margin-top: 5px;
   font-size: 20px;
 }
+
+/* if characters exceed 140 */
+.tweet-length .red {
+  color: red; 
+}
